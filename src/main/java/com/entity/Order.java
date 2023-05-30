@@ -14,6 +14,7 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
@@ -27,7 +28,7 @@ import lombok.Setter;
 @Setter
 
 @Entity
-
+@Table(name = "ordini")
 @NamedQueries({ @NamedQuery(name = "Order.findAll", query = "SELECT o FROM Order o"),
 		@NamedQuery(name = "Order.getAllOrdersByDate", query = "SELECT o FROM Order o WHERE date = :date") })
 

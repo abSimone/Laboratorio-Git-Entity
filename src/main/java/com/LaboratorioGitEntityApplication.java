@@ -1,5 +1,8 @@
 package com;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -37,6 +40,12 @@ public class LaboratorioGitEntityApplication implements CommandLineRunner {
 	@Resource(name = "insertOrder3")
 	private Order insertOrder3;
 
+	@Resource(name = "getDate")
+	private Date getDate;
+
+	@Resource(name = "getAllOrdersByProductId")
+	private List<Order> orders;
+
 	public static void main(String[] args) {
 		SpringApplication.run(LaboratorioGitEntityApplication.class, args);
 	}
@@ -44,14 +53,21 @@ public class LaboratorioGitEntityApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		repo.insertOrder(insertOrder1);
-		repo.insertOrder(insertOrder2);
+//		repo.insertOrder(insertOrder1);
+//		repo.insertOrder(insertOrder2);
 		repo.insertOrder(insertOrder3);
 
-		repo.insertProduct(insertProduct1);
+//		repo.insertProduct(insertProduct1);
 		repo.insertProduct(insertProduct2);
 		repo.insertProduct(insertProduct3);
 
+//		repo.getAllOrdersByDate(getDate).forEach(System.out::println);
+
+		orders.add(insertOrder1);
+		orders.add(insertOrder2);
+		repo.insertProductOrder(insertProduct1, orders);
+
+		repo.getAllOrdersByProductId(3).forEach(System.out::println);
 	}
 
 }

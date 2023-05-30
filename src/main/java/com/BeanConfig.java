@@ -2,6 +2,9 @@ package com;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -44,6 +47,16 @@ public class BeanConfig {
 	@Bean(name = "insertOrder3")
 	public Order insertOrder3() throws ParseException {
 		return new Order(new SimpleDateFormat("dd-MM-yyyy").parse("21-09-2002"), "Via col Maniscalco");
+	}
+
+	@Bean(name = "getDate")
+	public Date getDate() throws ParseException {
+		return new SimpleDateFormat("dd-MM-yyyy").parse("21-09-2002");
+	}
+
+	@Bean(name = "getAllOrdersByProductId")
+	public List<Order> getAllOrdersByProductId() {
+		return new ArrayList<>();
 	}
 
 }
