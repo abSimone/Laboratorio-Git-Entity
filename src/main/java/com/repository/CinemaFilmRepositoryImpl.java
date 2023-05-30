@@ -35,4 +35,16 @@ public class CinemaFilmRepositoryImpl implements CinemaFilmRepository {
 		return null;
 	}
 
+	@Override
+	public void insertCinema(Cinema cinema) {
+		em.persist(cinema);
+
+	}
+
+	@Override
+	public void insertFilm(Film film) {
+		em.persist(film);
+
+	}
+
 }

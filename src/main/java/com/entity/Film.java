@@ -39,6 +39,10 @@ public class Film implements Serializable {
 
 	@Column(name = "language_id")
 	private byte languageId;
+
+	@Column(name = "genere")
+	private String genere;
+
 	@UpdateTimestamp
 	@Column(name = "last_update")
 	private Timestamp lastUpdate;
@@ -80,7 +84,7 @@ public class Film implements Serializable {
 
 	// Costruttore per le insert con parametri pre impostati in modo da inserire
 	// solo title e description
-	public Film(String title, String description) {
+	public Film(String title, String description, String genere) {
 		this.title = title;
 		this.description = description;
 		this.languageId = 1;
@@ -92,6 +96,7 @@ public class Film implements Serializable {
 		this.rentalRate = 2.99;
 		this.replacementCost = 20.99;
 		this.specialFeatures = "Behind the Scenes";
+		this.genere = genere;
 	}
 
 	public int getFilmId() {
@@ -192,6 +197,14 @@ public class Film implements Serializable {
 
 	public String getTitle() {
 		return this.title;
+	}
+
+	public String getGenere() {
+		return genere;
+	}
+
+	public void setGenere(String genere) {
+		this.genere = genere;
 	}
 
 	public void setTitle(String title) {
