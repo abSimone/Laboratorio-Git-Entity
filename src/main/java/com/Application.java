@@ -1,6 +1,7 @@
 package com;
 
 import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +16,7 @@ import jakarta.annotation.Resource;
 public class Application implements CommandLineRunner {
 
 	@Autowired
+	// @Qualifier("serviceCinema")
 	private CinemaFilmService cinemaFilmService;
 
 	/*

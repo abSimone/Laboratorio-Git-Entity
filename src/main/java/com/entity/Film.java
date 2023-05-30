@@ -49,8 +49,6 @@ public class Film implements Serializable {
 
 	private int length;
 
-	@Column(name = "original_language_id")
-	private byte originalLanguageId;
 
 	private String rating;
 
@@ -66,9 +64,6 @@ public class Film implements Serializable {
 
 	@Column(name = "replacement_cost")
 	private double replacementCost;
-
-	@Column(name = "special_features")
-	private Object specialFeatures;
 
 	private String title;
 
@@ -89,13 +84,10 @@ public class Film implements Serializable {
 		this.description = description;
 		this.languageId = 1;
 		this.length = 190;
-		this.originalLanguageId = 1;
 		this.rating = "R";
 		this.releaseYear = 2023;
 		this.rentalDuration = 4;
 		this.rentalRate = 2.99;
-		this.replacementCost = 20.99;
-		this.specialFeatures = "Behind the Scenes";
 		this.genere = genere;
 	}
 
@@ -139,14 +131,6 @@ public class Film implements Serializable {
 		this.length = length;
 	}
 
-	public byte getOriginalLanguageId() {
-		return this.originalLanguageId;
-	}
-
-	public void setOriginalLanguageId(byte originalLanguageId) {
-		this.originalLanguageId = originalLanguageId;
-	}
-
 	public String getRating() {
 		return this.rating;
 	}
@@ -187,13 +171,6 @@ public class Film implements Serializable {
 		this.replacementCost = replacementCost;
 	}
 
-	public Object getSpecialFeatures() {
-		return this.specialFeatures;
-	}
-
-	public void setSpecialFeatures(Object specialFeatures) {
-		this.specialFeatures = specialFeatures;
-	}
 
 	public String getTitle() {
 		return this.title;

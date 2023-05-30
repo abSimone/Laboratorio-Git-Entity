@@ -9,9 +9,16 @@ import com.entity.Cinema;
 import com.entity.Film;
 import com.entity.Course;
 import com.entity.Student;
+// import com.service.CinemaFilmService;
+// import com.service.CinemaFilmServiceImpl;
 
 @Configuration
 public class EntityBeanConfiguration {
+
+	// @Bean(name="serviceCinema")
+	// public CinemaFilmService getService(){
+	// 	return new CinemaFilmServiceImpl();
+	// }
 
 	@Bean(name = "getStudent")
 	@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
