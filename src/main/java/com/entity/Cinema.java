@@ -14,8 +14,8 @@ import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "Cinema.findAll", query = "SELECT c FROM Course c"),
-		@NamedQuery(name = "Cinema.findCinemaBySales10", query = "select Nome_cinema AS cinema from cinema where numero_sale >= 10;"), })
+@NamedQueries({ @NamedQuery(name = "Cinema.findAll", query = "SELECT c FROM Cinema c"),
+		@NamedQuery(name = "Cinema.findCinemaBySales10", query = "SELECT c FROM Cinema c WHERE c.salesNumber >=10"), })
 public class Cinema implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +34,7 @@ public class Cinema implements Serializable {
 	private int salesNumber;
 
 	// bi-directional many-to-many association to Film
-	@ManyToMany(mappedBy = "film")
+	@ManyToMany(mappedBy = "cinemas")
 	private List<Film> films = new ArrayList<>();// Inizializzo qui la lista in modo tale che
 													// quando ci faccio delle operazioni sopra
 
